@@ -1,41 +1,30 @@
-// Common JS Syntax (not using ES syntax)
-// const express = require('express');
-// const dotenv = require('dotenv');
-// const products = require('./data/products');
-
-// Using the import syntax (ES)
-// NOTE: Because of using es modules with Node, we need to add .js to file names
-
 import express from 'express';
 import dotenv from 'dotenv';
-import products from './data/products.js';
-import connectDB from './config/db.js';
 import colors from 'colors';
+import connectDB from './config/db.js';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
-dotenv.config(); // Start dotenv
-const app = express(); // Start Express
-connectDB(); // Connect to MongoDB
+import productRoutes from './routes/productRoutes.js';
 
-// Testing that the server is running
+dotenv.config();
+
+connectDB();
+
+const app = express();
+
 app.get('/', (req, res) => {
-  res.send('API is running...');
+  res.send('API is running....');
 });
 
-// Serving the products
-app.get('/api/products', (req, res) => {
-  res.json(products);
-});
+// Product routes
+app.use('/api/products', productRoutes);
 
-// Serving an individual product
-app.get('/api/products/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  res.json(product);
-});
+// Error handling middleware
+app.use(notFound);
+app.use(errorHandler);
 
-// Using .env for setting PORT
 const PORT = process.env.PORT || 5000;
 
-// Starts server and displays the port and environment being run in
 app.listen(
   PORT,
   console.log(
