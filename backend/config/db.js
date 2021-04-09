@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import colors from 'colors';
 
 // Connecting to MongoDB database
 const connectDB = async () => {

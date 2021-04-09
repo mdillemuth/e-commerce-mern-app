@@ -1,7 +1,6 @@
 // Mock Data for site products
 const products = [
   {
-    _id: '1',
     name: 'Muay Thai Gloves',
     image: '/images/gloves.jpg',
     description:
@@ -14,7 +13,6 @@ const products = [
     numReviews: 9,
   },
   {
-    _id: '2',
     name: 'Sparring Headgear',
     image: '/images/headgear.jpg',
     description:
@@ -27,7 +25,6 @@ const products = [
     numReviews: 2,
   },
   {
-    _id: '3',
     name: 'Muay Thai Shin Guards',
     image: '/images/shin-guard.jpg',
     description:
@@ -40,7 +37,6 @@ const products = [
     numReviews: 1,
   },
   {
-    _id: '4',
     name: 'Thai Kick Pads',
     image: '/images/thai-pads.jpg',
     description:
@@ -53,7 +49,6 @@ const products = [
     numReviews: 2,
   },
   {
-    _id: '5',
     name: 'T-Shirt',
     image: '/images/t-shirt.jpg',
     description:
@@ -66,7 +61,6 @@ const products = [
     numReviews: 4,
   },
   {
-    _id: '6',
     name: 'Muay Thai Shorts',
     image: '/images/shorts.jpg',
     description:
