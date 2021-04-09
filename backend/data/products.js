@@ -72,10 +72,10 @@ const products = [
     rating: 4,
     numReviews: 15,
   },
-];
+]
 
 // Common JS Sytax for the backend
 // module.exports = products;
 
 // Preferred syntax
-export default products;
+export default products

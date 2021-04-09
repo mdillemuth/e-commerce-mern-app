@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import Product from '../components/Product';
-import { Row, Col } from 'react-bootstrap';
-import axios from 'axios';
+import React, { useEffect } from 'react'
+import { Row, Col } from 'react-bootstrap'
+import Product from '../components/Product'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../actions/productActions'
 
 const HomeScreen = () => {
-  // Using React hooks to manage products state
-  const [products, setProducts] = useState([]);
+  // Boilerplate redux in order to initialize dispatch
+  const dispatch = useDispatch()
 
-  // Fetching the product data from the backend
+  // useSelector to set state with products
+  const productList = useSelector((state) => state.productList)
+  const { loading, error, products } = productList
+
+  // Dispatch action to fetch products from backend
   useEffect(() => {
-    // Seperated function in order to use async/await in hook
-    const fetchProducts = async () => {
-      // Destructuring data from the response object
-      const { data } = await axios.get('/api/products');
-
-      // Setting state with data from backend
-      setProducts(data);
-    };
-
-    fetchProducts(); // useEffect() calls this when triggered
-  }, []);
+    dispatch(listProducts())
+  }, [dispatch])
 
   return (
     <>
       <h1>Latest Products</h1>
-      <Row>
-        {products.map((product) => (
-          <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-            <Product product={product} />
-          </Col>
-        ))}
-      </Row>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
+      ) : (
+        <Row>
+          {products.map((product) => (
+            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+              <Product product={product} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </>
-  );
-};
+  )
+}
 
-export default HomeScreen;
+export default HomeScreen

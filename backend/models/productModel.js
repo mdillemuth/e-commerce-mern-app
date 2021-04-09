@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 // Model for product reviews from users
 const reviewSchema = mongoose.Schema(
@@ -10,7 +10,7 @@ const reviewSchema = mongoose.Schema(
   {
     timestamps: true,
   }
-);
+)
 
 // Model for products
 const productSchema = mongoose.Schema(
@@ -66,9 +66,9 @@ const productSchema = mongoose.Schema(
   {
     timestamps: true,
   }
-);
+)
 
 // Create a Mongoose model named 'Product' which contains a nested Review schema
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema)
 
-export default Product;
+export default Product

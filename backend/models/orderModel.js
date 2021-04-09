@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 // Note the use of timestamps in all the models
 
@@ -76,9 +76,9 @@ const orderSchema = mongoose.Schema(
   {
     timestamps: true,
   }
-);
+)
 
 // Creates Mongoose model named 'Order'
-const Order = mongoose.model('Order', orderSchema);
+const Order = mongoose.model('Order', orderSchema)
 
-export default Order;
+export default Order
