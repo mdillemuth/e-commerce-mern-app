@@ -81,4 +81,7 @@ const products = [
 ];
 
 // Common JS Sytax for the backend
-module.exports = products;
+// module.exports = products;
+
+// Preferred syntax
+export default products;
