@@ -1,5 +1,4 @@
 // Mock Data for site products
-
 const products = [
   {
     _id: '1',
