@@ -1,0 +1,22 @@
+{
+  "name": "e-commerce-mern-app",
+  "version": "1.0.0",
+  "description": "MERN e-commerce platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdillemuth/e-commerce-mern-app.git"
+  },
+  "author": "Matt Dillemuth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdillemuth/e-commerce-mern-app/issues"
+  },
+  "homepage": "https://github.com/mdillemuth/e-commerce-mern-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
