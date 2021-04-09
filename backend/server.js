@@ -4,15 +4,17 @@
 // const products = require('./data/products');
 
 // Using the import syntax (ES)
+// NOTE: Because of using es modules with Node, we need to add .js to file names
+
 import express from 'express';
 import dotenv from 'dotenv';
 import products from './data/products.js';
+import connectDB from './config/db.js';
+import colors from 'colors';
 
-// Initializing dotenv
-dotenv.config();
-
-// Initializing Express
-const app = express();
+dotenv.config(); // Start dotenv
+const app = express(); // Start Express
+connectDB(); // Connect to MongoDB
 
 // Testing that the server is running
 app.get('/', (req, res) => {
@@ -36,5 +38,7 @@ const PORT = process.env.PORT || 5000;
 // Starts server and displays the port and environment being run in
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
 );
