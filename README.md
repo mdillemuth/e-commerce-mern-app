@@ -1,6 +1,12 @@
-# MERN E-commerce Platform
+# myMarketplace | MERN E-Commerce Platform
 
-This is a full-stack e-commerce application platform built with the React, Redux, MongoDB, and Express.
+A full-stack e-commerce application platform built with the React, Redux, MongoDB, and Express. The app is currently under development.
+
+![application-demo](screenshot.png)
+
+## Motivation
+
+With the massive industry that is e-commerce, it only felt natural to devote time to developing and understanding a full-stack e-commerce platform. As such, I decided to follow [Brad Traversy's Udemy MERN Stack E-Commerce](https://www.udemy.com/course/mern-ecommerce/) course and gain an in-depth understanding of this very common design pattern.
 
 ## App Features
 
