@@ -1,22 +1,17 @@
 import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-
-// Redux
-import { useDispatch, useSelector } from 'react-redux'
 import { listProducts } from '../actions/productActions'
 
 const HomeScreen = () => {
-  // Boilerplate redux in order to initialize dispatch
   const dispatch = useDispatch()
 
-  // useSelector to set state with products
   const productList = useSelector((state) => state.productList)
   const { loading, error, products } = productList
 
-  // Dispatch action to fetch products from backend
   useEffect(() => {
     dispatch(listProducts())
   }, [dispatch])

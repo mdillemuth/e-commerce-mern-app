@@ -1,7 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-// Displays the star rating for the product
 const Rating = ({ value, text, color }) => {
   return (
     <div className='rating'>
@@ -65,20 +63,13 @@ const Rating = ({ value, text, color }) => {
           }
         ></i>
       </span>
-      <div>{text && text}</div>
+      <span>{text && text}</span>
     </div>
   )
 }
 
-// Sets default color as gold
 Rating.defaultProps = {
   color: '#f8e825',
-}
-
-Rating.propTypes = {
-  value: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
-  color: PropTypes.string,
 }
 
 export default Rating

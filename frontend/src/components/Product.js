@@ -5,9 +5,9 @@ import Rating from './Rating'
 
 const Product = ({ product }) => {
   return (
-    <Card className='my-3 p-3 rounded product-card'>
+    <Card className='my-3 p-3 rounded'>
       <Link to={`/product/${product._id}`}>
-        <Card.Img className='img-fluid' src={product.image} variant='top' />
+        <Card.Img src={product.image} variant='top' />
       </Link>
 
       <Card.Body>
