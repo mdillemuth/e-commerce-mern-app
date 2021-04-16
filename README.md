@@ -1,4 +1,4 @@
-# myMarketplace | eCommerce Platform
+# Marketplace | eCommerce Platform
 
 A full-stack e-commerce application platform built with the MERN stack & Redux. This is from the course project for the [MERN eCommerce From Scratch Udemy Course](https://www.udemy.com/course/mern-ecommerce/).
 

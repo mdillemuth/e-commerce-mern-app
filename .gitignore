@@ -1,8 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# matt dillemuth personal notes & learning examples
-developer_notes.txt
-example-stores-img/
+# personal notes
+dev_notes.txt
 
 # dependencies
 node_modules/

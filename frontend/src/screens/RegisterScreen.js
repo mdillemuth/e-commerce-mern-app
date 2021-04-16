@@ -8,6 +8,7 @@ import FormContainer from '../components/FormContainer'
 import { register } from '../actions/userActions'
 
 const RegisterScreen = ({ location, history }) => {
+  // Hooking into form values
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -27,6 +28,7 @@ const RegisterScreen = ({ location, history }) => {
     }
   }, [history, userInfo, redirect])
 
+  // Checks passwords before sending registration request
   const submitHandler = (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
