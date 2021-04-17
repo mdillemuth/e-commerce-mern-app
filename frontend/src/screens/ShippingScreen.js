@@ -2,32 +2,30 @@ import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
+import CheckoutSteps from '../components/CheckoutSteps'
 import { saveShippingAddress } from '../actions/cartActions'
 
 const ShippingScreen = ({ history }) => {
-  // useSelector allows you to extract data from the Redux store state, using a selector function.
   const cart = useSelector((state) => state.cart)
-  const { shippingAddress } = cart // retrieve shipping address from cart
+  const { shippingAddress } = cart
 
-  // Setting state with form values
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
   const [country, setCountry] = useState(shippingAddress.country)
 
-  // This hook returns a reference to the dispatch function from the Redux store. You may use it to dispatch actions as needed.
   const dispatch = useDispatch()
 
-  // Redirects to payment screen on submit
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(saveShippingAddress({ address, city, postalCode, country })) // save shipping address
+    dispatch(saveShippingAddress({ address, city, postalCode, country }))
     history.push('/payment')
   }
 
   return (
     <FormContainer>
-      <h1>Shipping Information</h1>
+      <CheckoutSteps step1 step2 />
+      <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
           <Form.Label>Address</Form.Label>
